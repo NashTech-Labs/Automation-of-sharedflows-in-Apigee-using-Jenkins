@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout continueOnError="false" enabled="true" name="SC-Apigee-Call-Logs">
+  <DisplayName>SC-Apigee-Call-Logs</DisplayName>
+  <Properties/>
+  <Request clearPayload="true" variable="myRequest">
+    <Set>
+      <Headers>
+        <Header name="Accept">application/json</Header>
+      </Headers>
+      <Verb>POST</Verb>
+      <Payload contentType="application/json">
+      {
+      "OrgName": "{organization.name}",
+      "Proxy_Name": "{apiproxy.name}",
+      "Environment_Name": "{environment.name}",
+      "User_Agent": "{request.header.User-Agent.values}",
+      "Host": "{request.header.Host}",
+      "Proxy_URL": "{proxy.url}",
+      "API_Proxy_Revision": "{apiproxy.revision}",
+      "Target_IP": "{target.ip}",
+      "Target_Host": "{target.host}",
+      "Target_URL": "{target.url}",
+      "Target_Endpoint_Name": " {route.target}",
+      "Proxy_Base_Path": "{proxy.basepath}",
+      "Proxy_IP": "{proxy.client.ip}",
+      "URI_Port": "{virtualhost.port}",
+      "http_Method": " {request.verb}",
+      "Flow_Name": " {current.flow.name}",
+      "Protocol": "{request.header.X-Forwarded-Proto}",
+      "Status_Code": "{message.status.code}",
+      "Error_Status": "{error.status.code}",
+      "Query_Param_Count": "{request.queryparams.count}",
+      "Query_Param": "{request.queryparams.names}",
+      "Query_Param_Value": "{request.queryparam.hello.values}",
+      "ssl_enabled": "{client.ssl.enabled}",
+      "client.received.start.timestamp": "{client.received.start.timestamp}",
+      "client.sent.end.timestamp": "{client.sent.end.timestamp}",
+      "target.sent.start.timestamp": "{target.sent.start.timestamp}",
+      "target.received.end.timestamp": "{target.received.end.timestamp}",
+      "request_uri": "{request.uri}",
+      "request_uid": "{messageid}",
+      "request.querystring": "{request.querystring}",
+      "request": "{request}",
+      "request.content" : "{request.content}",
+      "response": "{response}",
+      "response.content": "{response.content}",
+      "http_version": "{message.version}"
+      }
+      </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  </Request>
+  <Response>calloutResponse</Response>
+  <HTTPTargetConnection>
+    <Properties/>
+    <URL>https://kf9e66w4va.execute-api.us-east-1.amazonaws.com/prod/apigee-logs</URL>
+  </HTTPTargetConnection>
+</ServiceCallout>

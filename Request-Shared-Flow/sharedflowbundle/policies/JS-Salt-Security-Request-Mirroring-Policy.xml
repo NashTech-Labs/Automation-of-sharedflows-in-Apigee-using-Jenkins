@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript continueOnError="false" enabled="true" timeLimit="200" name="JS-Salt-Security-Request-Mirroring-Policy">
+  <DisplayName>JS-Salt-Security-Request-Mirroring-Policy</DisplayName>
+  <Properties/>
+  <ResourceURL>jsc://RequestFlowPolicy-v2.0.9.js</ResourceURL>
+</Javascript>

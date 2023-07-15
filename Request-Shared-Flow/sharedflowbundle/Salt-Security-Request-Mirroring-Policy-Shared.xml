@@ -1,0 +1,18 @@
+<SharedFlowBundle revision="7" name="Salt-Security-Request-Mirroring-Policy-Shared">
+    <DisplayName>Salt Security Request Shared Flow</DisplayName>
+    <Description>Salt-Security-Request-Mirroring-Policy-Shared-v2.0.9</Description>
+    <CreatedAt>1684132006706</CreatedAt>
+    <LastModifiedAt>1684132006706</LastModifiedAt>
+    <Policies>
+        <Policy>JS-Salt-Security-Request-Mirroring-Policy</Policy>
+        <Policy>SC-Apigee-Call-Logs</Policy>
+    </Policies>
+    <Resources>
+        <Resource>jsc://RequestFlowPolicy.js</Resource>
+        <Resource>jsc://RequestFlowPolicy-v2.0.9.js</Resource>
+    </Resources>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+    <subType>SharedFlow</subType>
+</SharedFlowBundle>
